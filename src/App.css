@@ -2,6 +2,32 @@ main {
 
 }
 
+.maze-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.maze-button {
+  background-color: rgb(132, 0, 255);
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.maze {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .row {
   display: flex;
   flex-direction: row;
