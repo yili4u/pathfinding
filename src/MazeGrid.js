@@ -1,15 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.css'
 
 export default function MazeGrid(){
 
-    let initialMaze = [
-        ['wall', 'wall', 'wall', 'wall' ,'wall'],
-        ['start', 'path', 'path', 'wall' ,'wall'],
-        ['wall', 'wall', 'path', 'wall' ,'wall'],
-        ['wall', 'wall', 'path', 'path' ,'wall'],
-        ['wall', 'wall', 'wall', 'end' ,'wall'],
-    ];
+    let initialMaze = [];
 
     const [maze, setMaze] = useState(initialMaze);
 
@@ -61,9 +55,14 @@ export default function MazeGrid(){
         setMaze(maze);
     }
 
+    useEffect(() => {
+        // This function will run once the component mounts
+        generateMaze(19, 19);
+    }, []);
+
     return (
         <div className='maze-grid'>
-            <button className='maze-button' onClick={() => generateMaze(10, 10)}>Refresh Maze</button>
+            <button className='maze-button' onClick={() => generateMaze(19, 19)}>Refresh Maze</button>
             <div className={'maze'}>
             {maze.map((row, rowIndex) => (
                 <div className='row'>
